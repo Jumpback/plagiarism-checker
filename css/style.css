@@ -72,6 +72,7 @@
     margin: auto;
     max-width: 50%;
     height: 80%;
+    ;
 }
 
 .firstsection {
@@ -187,6 +188,7 @@
 .form {
     max-width: 800px;
     margin: 25px auto;
+
 }
 
 .form-input {

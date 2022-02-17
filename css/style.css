@@ -13,7 +13,7 @@
     top: 0;
     cursor: pointer;
     background-color: black;
- 
+
 }
 
 .nav-list {
@@ -221,58 +221,66 @@
     font-family: 'Ubuntu', sans-serif;
 }
 
-@media only sceen and (max-width:1440px)
-{
-    .nav-list{
+@media only sceen and (max-width:1440px) {
+    .nav-list {
         flex-direction: column;
     }
-    .navbar{
+
+    .navbar {
         flex-direction: column;
         height: 447px;
 
     }
-    .rightNav{
+
+    .rightNav {
         text-align: center;
         transition: all 0.3s ease-out;
     }
-    #search{
-        width:100%;
+
+    #search {
+        width: 100%;
     }
-    .burger{
+
+    .burger {
         display: block;
     }
-    .h-nav{
+
+    .h-nav {
         height: 72px;
     }
-    .v-class-resp{
+
+    .v-class-resp {
         opacity: 0;
     }
-    .h-nav-resp{
+
+    .h-nav-resp {
 
         height: 72px;
     }
-    .box-main{
+
+    .box-main {
         flex-direction: column-reverse;
         max-width: 100%;
     }
 }
 
 
-.burger{
+.burger {
     position: absolute;
     cursor: pointer;
     right: 5%;
     top: 15px;
     display: none;
 }
-.line{
+
+.line {
     width: 33px;
     background-color: white;
     height: 4px;
-    margin:5px 3px;
+    margin: 5px 3px;
 }
 
 
-html{
+html {
     scroll-behavior: smooth;
 }

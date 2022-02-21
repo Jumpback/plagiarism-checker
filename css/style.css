@@ -266,7 +266,6 @@
     }
 }
 
-
 .burger {
     position: absolute;
     cursor: pointer;
@@ -281,7 +280,6 @@
     height: 4px;
     margin: 5px 3px;
 }
-
 
 html {
     scroll-behavior: smooth;

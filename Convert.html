@@ -2,23 +2,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Drag & Drop or Browse: File Upload | CodingNepal</title>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-  />
-
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <style>
-    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Ubuntu&display=swap');
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
+      font-family: 'Ubuntu', sans-serif;
     }
+
+    .h1 {
+      padding-top: 20px;
+    }
+
     body {
       display: flex;
       align-items: center;
@@ -29,11 +28,12 @@
       margin-top: 100;
       /*background-image:  url("https://img.freepik.com/free-vector/team-concept-illustration_114360-678.jpg?size=626&ext=jpg");
       background-size: cover;*/
-      background: #3b3c47;
- }
+      background: #D3D3D3;
+    }
+
     .drag-area {
       border: 2px dashed #fff;
-      height: 350px;
+      height: 405px;
       width: 700px;
       border-radius: 5px;
       display: flex;
@@ -42,24 +42,32 @@
       flex-direction: column;
       background-color: rgb(0, 0, 0);
     }
+
     .drag-area.active {
       border: 2px solid #fff;
     }
+
     .drag-area .icon {
       font-size: 100px;
       color: #fff;
     }
-    .drag-area header { /* Drag here text*/
+
+    .drag-area header {
+      /* Drag here text*/
       font-size: 30px;
       font-weight: 500;
       color: rgb(255, 255, 255);
+      font-family: 'Ubuntu', sans-serif;
     }
-    .drag-area span { /* OR*/
+
+    .drag-area span {
+      /* OR*/
       font-size: 25px;
       font-weight: 500;
       color: rgb(255, 255, 255);
       margin: 10px 0 15px 0;
     }
+
     .drag-area button {
       padding: 10px 25px;
       font-size: 20px;
@@ -70,17 +78,21 @@
       color: #3b3c47;
       border-radius: 5px;
       cursor: pointer;
+      border: 2px solid darkgray;
     }
+
     .drag-area img {
       height: 100%;
       width: 100%;
       object-fit: cover;
       border-radius: 5px;
     }
+
     textarea {
-      margin-top: 10px;
-      margin-left: 50px;
-      width: 500px;
+      margin-top: 20px;
+
+      margin-left: 20px;
+      width: 600px;
       height: auto;
       -moz-border-bottom-colors: none;
       -moz-border-left-colors: none;
@@ -99,6 +111,7 @@
       padding: 5px 8px;
       transition: background-color 0.2s ease 0s;
       background: none repeat scroll 0 0 #ffffff;
+      border: 2px solid black;
     }
 
     textarea:focus {
@@ -137,7 +150,8 @@
     }
 
     .button-24:hover,
-    .button-24:active {  /* copu button*/
+    .button-24:active {
+      /* copu button*/
       background-color: initial;
       background-position: 0 0;
       color: #ff4742;
@@ -146,27 +160,37 @@
     .button-24:active {
       opacity: 0.5;
     }
+
+    .res h1 {
+      padding-top: 60px;
+    }
   </style>
+
 </head>
+
 <body>
+
   <div class="drag-area">
     <!-- <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div> -->
     <header>Drag & Drop to Upload File</header>
     <span>OR</span>
-    <button >Browse File</button>
+    <button>Browse File</button>
     <form action="" method="post" enctype="multipart/form-data">
       <input type="file" name="file" hidden />
       <button type="submit">Submit</button>
     </form>
   </div>
-  <h1>Result:</h1>
+
+  <div class="res">
+    <h1>Result:</h1> <br>
+  </div>
+
   {% if extracted_text %}
-  <p>The extracted text from the image above is:</p>
+  <p>The extracted text from the image above is:</p> <br>
   <button class="button-24" onclick="copy()">
     <i class="far fa-copy"></i>
   </button>
-  <textarea name="j" id="textarea" cols="30" rows="10">
-{{extracted_text}}</textarea>
+  <textarea name="j" id="textarea" cols="30" rows="10" placeholder="extracted text"></textarea>
 
   {% else %} The extracted text will be displayed here {% endif %} {% if msg%}
   <p>{{msg}}</p>
@@ -237,4 +261,5 @@
     }
   </script>
 </body>
+
 </html>

@@ -34,7 +34,7 @@
                 <p class="text-big">Check Plagiarism in a blink of eye!!!!</p>
                 <p class="text-small">Welcome To Our Website Plagiarism!</p>
                 <button class="btn">Login</button>
-                <button class="btn" onclick="window.location.href='http://localhost:3000/'">Get Started</button>
+                <button class="btn" onclick="window.location.href='Convert.html'">Get Started</button>
             </div>
             <div class="secondhalf">
                 <!-- <img src="css\img\bg1.jpg" alt="image"> -->
@@ -110,13 +110,19 @@
     <section class="contact" id="contact">
         <h2 class="text-center">Contact us</h2>
         <div class="form">
-            <input class="form-input" type="text" name="name" id="name" placeholder="Enter Your Name">
-            <input class="form-input" type="text" name="phone" id="name" placeholder="Enter Your Phone">
-            <input class="form-input" type="text" name="email" id="name" placeholder="Enter Your Email">
-            <textarea class="form-input" name="text" id="text" cols="30" rows="10"
-                placeholder="Ellaborate your concern"></textarea>
-            <button class="btn btn-sm btn-dark">Submit</button>
+            <form action="index.php" method="post">
+                <label for="name">Name</label>
+                <input class="form-input" type="text" name="name" id="name">
+                <label for="email">Email</label>
+                <input class="form-input" type="email" name="email" id="email">
+                <label for="subject">Subject</label>
+                <input class="form-input" type="text" name="subject" id="subject">
+                <label for="message">Message</label>
+                <textarea class="form-input" name="message"  id="message" cols="10" rows="7"></textarea>
+                <button class="btn btn-sm btn-dark"  onclick="window.location.href='http://localhost:3000/'">Submit</button>
+            </form>
         </div>
+
     </section>
     <footer class="background">
         <p class="text-footer">
@@ -127,6 +133,39 @@
         </p>
     </footer>
     <script src="js/j.js"></script>
-</body>
 
+</body>
 </html>
+
+
+<?php
+
+if (isset($_POST['name'])) {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+    $server = 'localhost';
+    $username = 'root';
+    $password = '';
+    $DB = "omkar";
+
+    $conn = new mysqli($server, $username, $password, $DB);
+    if (!$conn) {
+        die('Connection failed : ' . mysqli_connect_error());
+    }
+
+    $sql = "INSERT INTO `contactus`(`id`, `name`, `email`, `subject`, `message`) VALUES ('$id','$name','$email','$subject','$message')";
+
+    echo $sql;
+
+    if ($conn->query($sql) == true) {
+        echo "Successfully inserted";
+    } else {
+        echo "ERROR  $sql <br> $conn->error";
+    }
+
+    $conn->close();
+}
+?>
+

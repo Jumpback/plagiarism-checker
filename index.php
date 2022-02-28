@@ -34,7 +34,7 @@
                 <p class="text-big">Check Plagiarism in a blink of eye!!!!</p>
                 <p class="text-small">Welcome To Our Website Plagiarism!</p>
                 <button class="btn">Login</button>
-                <button class="btn" onclick="window.location.href='Convert.html'">Get Started</button>
+                <button class="btn" onclick="window.location.href='http://127.0.0.1:5000/'">Get Started</button>
             </div>
             <div class="secondhalf">
                 <!-- <img src="css\img\bg1.jpg" alt="image"> -->
@@ -111,6 +111,7 @@
         <h2 class="text-center">Contact us</h2>
         <div class="form">
             <form action="index.php" method="post">
+
                 <label for="name">Name</label>
                 <input class="form-input" type="text" name="name" id="name">
                 <label for="email">Email</label>
@@ -118,8 +119,9 @@
                 <label for="subject">Subject</label>
                 <input class="form-input" type="text" name="subject" id="subject">
                 <label for="message">Message</label>
-                <textarea class="form-input" name="message"  id="message" cols="10" rows="7"></textarea>
-                <button class="btn btn-sm btn-dark"  onclick="window.location.href='http://localhost:3000/'">Submit</button>
+                <textarea class="form-input" name="message" id="message" cols="10" rows="7"></textarea>
+                <button class="btn btn-sm btn-dark"
+                    onclick="window.location.href='http://localhost:3000/'">Submit</button>
             </form>
         </div>
 
@@ -135,6 +137,7 @@
     <script src="js/j.js"></script>
 
 </body>
+
 </html>
 
 
@@ -149,18 +152,18 @@ if (isset($_POST['name'])) {
     $username = 'root';
     $password = '';
     $DB = "omkar";
-
+   
     $conn = new mysqli($server, $username, $password, $DB);
     if (!$conn) {
         die('Connection failed : ' . mysqli_connect_error());
     }
 
-    $sql = "INSERT INTO `contactus`(`id`, `name`, `email`, `subject`, `message`) VALUES ('$id','$name','$email','$subject','$message')";
+    $sql = "INSERT INTO `contactus`(`name`, `email`, `subject`, `message`) VALUES ('$name','$email','$subject','$message')";
 
-    echo $sql;
+    // echo $sql;
 
     if ($conn->query($sql) == true) {
-        echo "Successfully inserted";
+        // echo "Successfully inserted";
     } else {
         echo "ERROR  $sql <br> $conn->error";
     }
@@ -168,4 +171,3 @@ if (isset($_POST['name'])) {
     $conn->close();
 }
 ?>
-

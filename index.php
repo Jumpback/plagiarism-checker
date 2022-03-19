@@ -151,7 +151,7 @@ if (isset($_POST['name'])) {
     $server = 'localhost';
     $username = 'root';
     $password = '';
-    $DB = "omkar";
+    $DB = "plagiarism";
    
     $conn = new mysqli($server, $username, $password, $DB);
     if (!$conn) {

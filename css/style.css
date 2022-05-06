@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Ubuntu&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +12,6 @@
     top: 0;
     cursor: pointer;
     background-color: black;
-
 }
 
 .nav-list {
@@ -22,13 +20,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 .nav-list li {
     list-style: none;
     padding: 11px 25px;
-
 }
 
 .nav-list li a {
@@ -43,19 +39,15 @@
 }
 
 .rightNav {
-    /* background-color: blue; */
     width: 50%;
     text-align: right;
-
 }
 
 #search {
     padding: 2px;
     font-size: 15px;
-
     border: 2px solid grey;
     border-radius: 25px;
-
 }
 
 .background {
@@ -96,7 +88,6 @@
 }
 
 .text-big {
-
     font-size: 41px;
     padding-bottom: 15px;
     color: white;
@@ -142,13 +133,11 @@
 .section-left {
     height: 500px;
     display: flex;
-
     align-items: center;
     justify-content: space-evenly;
     max-width: 80%;
     margin: auto;
     flex-direction: row-reverse;
-
 }
 
 .paras {
@@ -175,7 +164,6 @@
 .contact {
     background-color: #f6f5f4;
     height: 680px;
-
 }
 
 .text-center {
@@ -188,7 +176,6 @@
 .form {
     max-width: 800px;
     margin: 25px auto;
-
 }
 
 .form-input {
@@ -204,7 +191,6 @@
 .btn-dark {
     border: 2px solid gray;
     color: black;
-
 }
 
 .text-footer {
@@ -214,56 +200,12 @@
     display: flex;
     justify-content: center;
     color: white;
-
 }
 
 .text-footer a {
     text-decoration: none;
     color: white;
     font-family: 'Ubuntu', sans-serif;
-}
-
-@media only sceen and (max-width:1440px) {
-    .nav-list {
-        flex-direction: column;
-    }
-
-    .navbar {
-        flex-direction: column;
-        height: 447px;
-
-    }
-
-    .rightNav {
-        text-align: center;
-        transition: all 0.3s ease-out;
-    }
-
-    #search {
-        width: 100%;
-    }
-
-    .burger {
-        display: block;
-    }
-
-    .h-nav {
-        height: 72px;
-    }
-
-    .v-class-resp {
-        opacity: 0;
-    }
-
-    .h-nav-resp {
-
-        height: 72px;
-    }
-
-    .box-main {
-        flex-direction: column-reverse;
-        max-width: 100%;
-    }
 }
 
 .burger {

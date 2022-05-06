@@ -19,8 +19,6 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="rightNav background v-class-resp">
-            <!-- <input type="text" name="search" id="search"> -->
-            <!-- <button class="btn btn-sm">Search</button> -->
         </div>
         <div class="burger">
             <div class="line"></div>
@@ -37,7 +35,6 @@
                 <button class="btn" onclick="window.location.href='http://127.0.0.1:5000/'">Get Started</button>
             </div>
             <div class="secondhalf">
-                <!-- <img src="css\img\bg1.jpg" alt="image"> -->
             </div>
         </div>
     </section>
@@ -83,9 +80,7 @@
             <img src="https://source.unsplash.com/1600x900/?coding" alt="">
         </div>
     </section>
-
-
-
+    
     <section class="section">
         <div class="paras">
             <p class="sectionTag">Unintentional plagiarism dicta.</p>
@@ -151,8 +146,8 @@ if (isset($_POST['name'])) {
     $server = 'localhost';
     $username = 'root';
     $password = '';
-    $DB = "plagiarism";
-   
+    $DB = "omkar";
+
     $conn = new mysqli($server, $username, $password, $DB);
     if (!$conn) {
         die('Connection failed : ' . mysqli_connect_error());
@@ -160,10 +155,7 @@ if (isset($_POST['name'])) {
 
     $sql = "INSERT INTO `contactus`(`name`, `email`, `subject`, `message`) VALUES ('$name','$email','$subject','$message')";
 
-    // echo $sql;
-
     if ($conn->query($sql) == true) {
-        // echo "Successfully inserted";
     } else {
         echo "ERROR  $sql <br> $conn->error";
     }

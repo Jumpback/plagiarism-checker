@@ -148,6 +148,7 @@ if (isset($_POST['name'])) {
     $password = '';
     $DB = "omkar";
 
+    
     $conn = new mysqli($server, $username, $password, $DB);
     if (!$conn) {
         die('Connection failed : ' . mysqli_connect_error());
